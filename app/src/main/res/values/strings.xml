@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Conductor Talk Demo</string>
+    <string name="activity_label_simple_example">Simple Example</string>
 </resources>

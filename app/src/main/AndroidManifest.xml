@@ -12,7 +12,16 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
+                <action android:name=".MainActivity"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SimpleExampleActivity"
+            android:label="@string/activity_label_simple_example">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name=".SimpleExampleActivity"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
