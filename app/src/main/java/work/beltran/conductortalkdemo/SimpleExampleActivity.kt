@@ -9,7 +9,7 @@ import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
-import kotlinx.android.synthetic.main.activity_simple_example.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.controller_simple.view.*
 
 
@@ -19,7 +19,7 @@ class SimpleExampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_simple_example)
+        setContentView(R.layout.activity_main)
 
         // Create or reuse a Router if available on savedInstanceState
         router = Conductor.attachRouter(this, controller_container, savedInstanceState)
