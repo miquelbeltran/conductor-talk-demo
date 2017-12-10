@@ -24,10 +24,28 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation 'com.bluelinelabs:conductor:2.1.4'
+
+    // If you want the components that go along with
+    // Android's support libraries (currently just a PagerAdapter):
+    implementation 'com.bluelinelabs:conductor-support:2.1.4'
+
+    // If you want RxJava lifecycle support:
+    implementation 'com.bluelinelabs:conductor-rxlifecycle:2.1.4'
+
+    // If you want RxJava2 lifecycle support:
+    implementation 'com.bluelinelabs:conductor-rxlifecycle2:2.1.4'
+
+    // If you want RxJava2 Autodispose support:
+    implementation 'com.bluelinelabs:conductor-autodispose:2.1.4'
+
+    // If you want Controllers that are Lifecycle-aware (architecture components):
+    implementation 'com.bluelinelabs:conductor-archlifecycle:0.1.1'
 }
