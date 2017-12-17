@@ -12,15 +12,27 @@ class MyDaggerController : Controller() {
     @Inject
     lateinit var value: String
 
+    // Option 3: init the dependency when needed by lazy
+//    val value: String by lazy {
+//        (activity!!.application as App).component.string()
+//    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.controller_dummy, container, false)
 
         // Option 1: Always inject on onCreateView
+        // On config changes (screen rotation) it will be injected each time
+        // but it's not necessary, because value already was injected
         (activity!!.application as App).component.inject(this)
 
+        // Option 2: Check if value was already injected
+        // This allows the injected dependencies to survive config-changes
+        // Don't do this for dependencies that use the host Activity context! as it will be destroyed
+//        if (!::value.isInitialized) {
+//            (activity!!.application as App).component.inject(this)
+//        }
 
         view.text.text = value
-
         return view
     }
 
