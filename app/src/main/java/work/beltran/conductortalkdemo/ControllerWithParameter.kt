@@ -15,9 +15,10 @@ import kotlinx.android.synthetic.main.controller_dummy.view.*
  *
  * Enable "Don't keep Activities" to see the effect
  */
-class ControllerWithParameterWrong(private val parameter: String) : Controller() {
+class ControllerWithParameterWrong(val parameter: String) : Controller() {
 
-    // Need to provide a constructor that takes a Bundle argument or a default constructor.
+    // Mandatory empty constructor.
+    // What should be "parameter", then?
     constructor() : this("???")
 
     @SuppressLint("SetTextI18n")

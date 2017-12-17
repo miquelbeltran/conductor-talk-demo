@@ -26,8 +26,14 @@ class DemoController : Controller() {
                 1 -> fadeTransition()
                 2 -> constructorParameter()
                 3 -> constructorParameterWrong()
+                4 -> customTransition()
             }
         }
+    }
+
+    private fun customTransition() {
+        router.pushController(RouterTransaction.with(DummyController())
+                .pushChangeHandler(CustomChangeHandler()))
     }
 
     private fun horizontalTransition() {
@@ -55,7 +61,8 @@ class DemoController : Controller() {
                 "Horizontal Transition",
                 "Fade Transition",
                 "Constructor Parameter Good",
-                "Constructor Parameter Bad"
+                "Constructor Parameter Bad",
+                "Custom Transition"
         )
     }
 }
