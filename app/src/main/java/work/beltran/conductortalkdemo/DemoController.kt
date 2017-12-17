@@ -27,8 +27,13 @@ class DemoController : Controller() {
                 2 -> constructorParameter()
                 3 -> constructorParameterWrong()
                 4 -> customTransition()
+                5 -> daggerController()
             }
         }
+    }
+
+    private fun daggerController() {
+        router.pushController(RouterTransaction.with(MyDaggerController()))
     }
 
     private fun customTransition() {
@@ -62,7 +67,8 @@ class DemoController : Controller() {
                 "Fade Transition",
                 "Constructor Parameter Good",
                 "Constructor Parameter Bad",
-                "Custom Transition"
+                "Custom Transition",
+                "Dagger Controller"
         )
     }
 }
