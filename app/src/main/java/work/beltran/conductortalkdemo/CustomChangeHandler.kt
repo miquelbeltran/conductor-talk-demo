@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator
 import android.view.View
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.changehandler.AnimatorChangeHandler
+import kotlinx.android.synthetic.main.controller_dummy.view.*
 
 /**
  * This AnimatorChangeHandler will make a view grow from 0 to 100% its size on push
@@ -35,8 +36,15 @@ class CustomChangeHandler : AnimatorChangeHandler() {
         val animator = AnimatorSet()
 
         to?.let {
+            // Demo 1: show how this works
             animator.play(ObjectAnimator.ofFloat(to, View.SCALE_X, 0f, 1f))
             animator.play(ObjectAnimator.ofFloat(to, View.SCALE_Y, 0f, 1f))
+
+            // Demo 2: Add this part later to show individual views handling
+            // If the "to" View has a child with id "image"
+            to.image?.let { image ->
+                animator.play(ObjectAnimator.ofFloat(image, View.ROTATION, -360f, 1f))
+            }
         }
 
         return animator
