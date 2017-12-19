@@ -46,7 +46,7 @@ dependencies {
 //    implementation 'com.bluelinelabs:conductor-autodispose:2.1.4'
 
     // If you want Controllers that are Lifecycle-aware (architecture components):
-//    implementation 'com.bluelinelabs:conductor-archlifecycle:0.1.1'
+    implementation 'com.bluelinelabs:conductor-archlifecycle:0.1.1'
     implementation "android.arch.lifecycle:extensions:1.0.0"
 
     implementation 'com.google.dagger:dagger:2.11'

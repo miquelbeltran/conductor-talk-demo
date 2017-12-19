@@ -14,4 +14,5 @@ class MyViewModel : ViewModel() {
     }
 
     fun getTime(): LiveData<String> = liveData
+
 }

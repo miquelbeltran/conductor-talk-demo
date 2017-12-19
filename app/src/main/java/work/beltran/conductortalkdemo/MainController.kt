@@ -11,6 +11,8 @@ import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import kotlinx.android.synthetic.main.controller_demo.view.*
 import work.beltran.conductortalkdemo.arch.ViewModelController
+import work.beltran.conductortalkdemo.arch.ViewModelControllerLifecycle
+import work.beltran.conductortalkdemo.arch.ViewModelOwnerController
 import work.beltran.conductortalkdemo.dagger.MyDaggerController
 import work.beltran.conductortalkdemo.parameters.ControllerWithParameter
 import work.beltran.conductortalkdemo.parameters.ControllerWithParameterWrong
@@ -33,12 +35,22 @@ class MainController : Controller() {
                 4 -> customTransition()
                 5 -> daggerController()
                 6 -> viewModelController()
+                7 -> viewModelControllerLifecycle()
+                8 -> viewModelOwnerController()
             }
         }
     }
 
+    private fun viewModelOwnerController() {
+        router.pushController(RouterTransaction.with(ViewModelOwnerController()))
+    }
+
     private fun viewModelController() {
         router.pushController(RouterTransaction.with(ViewModelController()))
+    }
+
+    private fun viewModelControllerLifecycle() {
+        router.pushController(RouterTransaction.with(ViewModelControllerLifecycle()))
     }
 
     private fun daggerController() {
@@ -78,7 +90,9 @@ class MainController : Controller() {
                 "Constructor Parameter Bad",
                 "Custom Transition",
                 "Dagger Controller",
-                "ViewModel Controller"
+                "ViewModel Controller",
+                "ViewModel Controller with Lifecycle",
+                "ViewModel Controller with Own Store"
         )
     }
 }

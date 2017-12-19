@@ -7,13 +7,11 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bluelinelabs.conductor.Controller
+import com.bluelinelabs.conductor.archlifecycle.LifecycleController
 import kotlinx.android.synthetic.main.controller_dummy.view.*
 import work.beltran.conductortalkdemo.R
 
-class ViewModelController : Controller() {
-
-    lateinit var model: MyViewModel
+class ViewModelControllerLifecycle : LifecycleController() {
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
@@ -22,8 +20,10 @@ class ViewModelController : Controller() {
         // This ViewModel is owned by the MainActivity.
         // Because of that, it will live as long as the Activity lives!
         // It will *not* be destroyed when the Controller gets destroyed
-        model = ViewModelProviders.of(activity as AppCompatActivity).get(MyViewModel::class.java)
-        model.getTime().observe(activity as AppCompatActivity, Observer<String> {
+        val model = ViewModelProviders.of(activity as AppCompatActivity).get(MyViewModel::class.java)
+
+        // The owner is now the Controller, not its Activity
+        model.getTime().observe(this, Observer<String> {
             view.textView.text = "Time is $it"
         })
 
