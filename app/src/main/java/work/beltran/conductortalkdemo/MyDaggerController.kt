@@ -32,7 +32,7 @@ class MyDaggerController : Controller() {
 //            (activity!!.application as App).component.inject(this)
 //        }
 
-        view.text.text = value
+        view.textView.text = value
         return view
     }
 

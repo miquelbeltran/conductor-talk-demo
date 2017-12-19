@@ -25,7 +25,7 @@ class ControllerWithParameterWrong(val parameter: String) : Controller() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.controller_dummy, container, false)
 
-        view.text.text = "My favorite city is $parameter"
+        view.textView.text = "My favorite city is $parameter"
 
         return view
     }
@@ -53,7 +53,7 @@ class ControllerWithParameter(bundle: Bundle) : Controller(bundle) {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.controller_dummy, container, false)
 
-        view.text.text = "My favorite city is $parameter"
+        view.textView.text = "My favorite city is $parameter"
 
         return view
     }
