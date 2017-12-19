@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SimpleExampleActivity"
+            android:name=".simple.SimpleExampleActivity"
             android:label="@string/activity_label_simple_example">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -47,6 +47,7 @@ dependencies {
 
     // If you want Controllers that are Lifecycle-aware (architecture components):
 //    implementation 'com.bluelinelabs:conductor-archlifecycle:0.1.1'
+    implementation "android.arch.lifecycle:extensions:1.0.0"
 
     implementation 'com.google.dagger:dagger:2.11'
     kapt 'com.google.dagger:dagger-compiler:2.11'

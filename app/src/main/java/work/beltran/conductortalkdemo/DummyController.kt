@@ -35,6 +35,12 @@ class DummyController : Controller() {
         view?.textView?.setTextColor(Color.BLUE)
         view?.textView?.textSize = 16.0f
 
+        // A single findViewById here
+        view?.textView?.run {
+            setTextColor(Color.BLUE)
+            textSize = 16.0f
+        }
+
         // Option 2 (may leak)
         // Access to the stored textView
         textView.text = text

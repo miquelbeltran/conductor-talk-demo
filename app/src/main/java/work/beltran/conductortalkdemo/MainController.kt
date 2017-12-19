@@ -10,8 +10,12 @@ import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import kotlinx.android.synthetic.main.controller_demo.view.*
+import work.beltran.conductortalkdemo.arch.ViewModelController
+import work.beltran.conductortalkdemo.dagger.MyDaggerController
+import work.beltran.conductortalkdemo.parameters.ControllerWithParameter
+import work.beltran.conductortalkdemo.parameters.ControllerWithParameterWrong
 
-class DemoController : Controller() {
+class MainController : Controller() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.controller_demo, container, false)
         initList(view.list)
@@ -28,8 +32,13 @@ class DemoController : Controller() {
                 3 -> constructorParameterWrong()
                 4 -> customTransition()
                 5 -> daggerController()
+                6 -> viewModelController()
             }
         }
+    }
+
+    private fun viewModelController() {
+        router.pushController(RouterTransaction.with(ViewModelController()))
     }
 
     private fun daggerController() {
@@ -68,7 +77,8 @@ class DemoController : Controller() {
                 "Constructor Parameter Good",
                 "Constructor Parameter Bad",
                 "Custom Transition",
-                "Dagger Controller"
+                "Dagger Controller",
+                "ViewModel Controller"
         )
     }
 }
