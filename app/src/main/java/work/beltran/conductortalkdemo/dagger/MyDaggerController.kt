@@ -30,9 +30,9 @@ class MyDaggerController : Controller() {
         // Option 2: Check if value was already injected
         // This allows the injected dependencies to survive config-changes
         // Don't do this for dependencies that use the host Activity context! as it will be destroyed
-//        if (!::value.isInitialized) {
-//            (activity!!.application as App).component.inject(this)
-//        }
+        if (!::value.isInitialized) {
+            (activity!!.application as App).component.inject(this)
+        }
 
         view.textView.text = value
         return view

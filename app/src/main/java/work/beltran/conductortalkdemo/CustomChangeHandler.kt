@@ -41,10 +41,8 @@ class CustomChangeHandler : AnimatorChangeHandler() {
             animator.play(ObjectAnimator.ofFloat(to, View.SCALE_Y, 0f, 1f))
 
             // Demo 2: Add this part later to show individual views handling
-            // If the "to" View has a child with id "image"
-            to.image?.let { image ->
-                animator.play(ObjectAnimator.ofFloat(image, View.ROTATION, -360f, 1f))
-            }
+            // The "to" View has a child with id "image"
+            animator.play(ObjectAnimator.ofFloat(to.image, View.ROTATION, -360f, 1f))
         }
 
         return animator

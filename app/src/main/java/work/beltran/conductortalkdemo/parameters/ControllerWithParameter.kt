@@ -23,9 +23,10 @@ class ControllerWithParameter(bundle: Bundle) : Controller(bundle) {
         putString(EXTRA_PARAMETER, parameter)
     })
 
-    // Access arguments like class properties
-    private val parameter
-        get() = args[EXTRA_PARAMETER]
+    // Access arguments
+    private val parameter by lazy {
+        args.getString(EXTRA_PARAMETER)
+    }
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {

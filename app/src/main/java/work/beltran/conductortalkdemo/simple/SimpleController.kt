@@ -10,11 +10,15 @@ import work.beltran.conductortalkdemo.R
 
 class SimpleController : Controller() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup): View {
+
         val view = inflater.inflate(R.layout.controller_simple, container, false)
+
         view.button.setOnClickListener {
             router.pushController(RouterTransaction.with(OtherSimpleController()))
         }
+
         return view
     }
 }
