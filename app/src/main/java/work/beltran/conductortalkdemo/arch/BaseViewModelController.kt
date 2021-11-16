@@ -1,8 +1,8 @@
 package work.beltran.conductortalkdemo.arch
 
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
-import android.arch.lifecycle.ViewModelStore
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelStore
 import com.bluelinelabs.conductor.archlifecycle.LifecycleController
 
 abstract class BaseViewModelController : LifecycleController() {

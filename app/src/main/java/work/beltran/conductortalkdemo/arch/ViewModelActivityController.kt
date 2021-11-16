@@ -1,12 +1,13 @@
 package work.beltran.conductortalkdemo.arch
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.bluelinelabs.conductor.Controller
 import kotlinx.android.synthetic.main.controller_dummy.view.*
 import work.beltran.conductortalkdemo.R
@@ -23,7 +24,7 @@ class ViewModelActivityController : Controller() {
         // Because of that, it will live as long as the Activity lives!
         // It will *not* be cleared when the Controller gets destroyed
         model = ViewModelProviders.of(activity as AppCompatActivity).get(MyViewModel::class.java)
-        model.getTime().observe(activity as AppCompatActivity, Observer<String> {
+        model.getTime().observe(activity as AppCompatActivity, {
             view.textView.text = "Time is $it"
         })
 
