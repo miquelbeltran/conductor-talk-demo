@@ -52,20 +52,26 @@ class MainController : Controller() {
     }
 
     private fun customTransition() {
-        router.pushController(RouterTransaction.with(DummyController())
-                .pushChangeHandler(CustomChangeHandler()))
+        router.pushController(
+            RouterTransaction.with(DummyController())
+                .pushChangeHandler(CustomChangeHandler())
+        )
     }
 
     private fun horizontalTransition() {
-        router.pushController(RouterTransaction.with(DummyController())
+        router.pushController(
+            RouterTransaction.with(DummyController())
                 .popChangeHandler(HorizontalChangeHandler())
-                .pushChangeHandler(HorizontalChangeHandler()))
+                .pushChangeHandler(HorizontalChangeHandler())
+        )
     }
 
     private fun fadeTransition() {
-        router.pushController(RouterTransaction.with(DummyController())
+        router.pushController(
+            RouterTransaction.with(DummyController())
                 .popChangeHandler(FadeChangeHandler())
-                .pushChangeHandler(FadeChangeHandler()))
+                .pushChangeHandler(FadeChangeHandler())
+        )
     }
 
     private fun constructorParameter() {
@@ -78,14 +84,14 @@ class MainController : Controller() {
 
     companion object {
         val ITEMS = arrayOf(
-                "Horizontal Transition",
-                "Fade Transition",
-                "Constructor Parameter Good",
-                "Constructor Parameter Bad",
-                "Custom Transition",
-                "Dagger Controller",
-                "ViewModel Controller from Activity",
-                "ViewModel Controller with Store"
+            "Horizontal Transition",
+            "Fade Transition",
+            "Constructor Parameter Good",
+            "Constructor Parameter Bad",
+            "Custom Transition",
+            "Dagger Controller",
+            "ViewModel Controller from Activity",
+            "ViewModel Controller with Store"
         )
     }
 }
